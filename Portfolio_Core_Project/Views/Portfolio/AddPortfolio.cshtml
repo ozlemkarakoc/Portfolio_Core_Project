@@ -13,25 +13,33 @@
     <br />
     @Html.Label("Proje Başlığı")
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name,"", new { style = "color: red;" })
     <br />
     <label>Ücret</label>
     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Price, "", new { style = "color: red;" })
     <br />
     <label>Görsel 1</label>
     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl, "", new { style = "color: red;" })
     <br />
     <label>Görsel 2</label>
     @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl2, "", new { style = "color: red;" })
     <br />
     <label>Proje Url</label>
     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ProjectUrl, "", new { style = "color: red;" })
     <br />
     <label>Tamamlanma Oranı</label>
     @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Value, "", new { style = "color: red;" })
     <br />
     <label>Platform</label>
     @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Platform, "", new { style = "color: red;" })
     <br />
     <button class="btn btn-info">Kaydet</button>
 }
+
 
