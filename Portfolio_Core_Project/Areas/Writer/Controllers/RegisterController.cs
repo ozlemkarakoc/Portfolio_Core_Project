@@ -24,18 +24,20 @@ namespace Portfolio_Core_Project.Areas.Writer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
-            if (ModelState.IsValid)
-            {
-                WriterUser w = new WriterUser()
-                {
-                    Name = p.Name,
-                    Surname = p.Surname,
-                    Email = p.Mail,
-                    UserName = p.UserName,
-                    ImageUrl = p.ImageUrl
-                };
 
+            WriterUser w = new WriterUser()
+            {
+                Name = p.Name,
+                Surname = p.Surname,
+                Email = p.Mail,
+                UserName = p.UserName,
+                ImageUrl = p.ImageUrl
+            };
+            if (p.Password == p.ConfirmPassword)
+            {
                 var result = await _userManager.CreateAsync(w, p.Password);
+
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Login");
