@@ -27,7 +27,7 @@ namespace Portfolio_Core_Project.Areas.Writer.Controllers
 
             //Weather Api
 
-            string api = "4a534e268c4fac28233c8033f46f08f0"; 
+            string api = "4a534e268c4fac28233c8033f46f08f0";
             string url = $"http://api.openweathermap.org/data/2.5/weather?q=ankara&mode=xml&lang=tr&units=metric&appid={api}";
 
             try
@@ -55,10 +55,11 @@ namespace Portfolio_Core_Project.Areas.Writer.Controllers
 
             //Statistics
             Context c = new Context();
-            ViewBag.v1 = 0;
+            ViewBag.v1 = c.WriterMessages.Where(x => x.Receiver == values.Email).Count();
             ViewBag.v2 = c.Announcements.Count();
-            ViewBag.v3 = 0;
-            ViewBag.v4 = c.Skills.Count();
+            ViewBag.v3 = c.WriterMessages.Where(x => x.Sender == values.Email).Count();
+            ViewBag.v4 = c.Users.Count();
+            //ViewBag.v4 = c.Skills.Count();
             return View();
         }
     }
