@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace Portfolio_Core_Project.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
+
     public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
