@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio_Core_Project.Areas.Writer.Models;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Portfolio_Core_Project.Areas.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]
 
