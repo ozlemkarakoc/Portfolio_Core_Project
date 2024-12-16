@@ -8,5 +8,9 @@ namespace Portfolio_Core_Project.Controllers
         {
             return View();
         }
+        public IActionResult Error404()
+        {
+            return View();
+        }
     }
 }
